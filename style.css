@@ -1,2 +1,89 @@
-style
-ghghgh
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+
+/* LAYOUT */
+
+header {
+  position: relative;
+  height: 10vh;
+  border-bottom: 7px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 30vh;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.signs {
+  border-radius: 5px;
+  font-size: 80px;
+  background-color: #eee;
+}
+
+.result {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.computerScore {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.again {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #222;
+  font-weight: bold;
+  font-size: 1.17em;
+}
+
+.again-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 10px;
+}

@@ -4,9 +4,72 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    ghghgh
+    <header>
+      <h1>Let's play Rock Paper Scissors!</h1>
+    </header>
+    <main>
+      <h3>First to score 5 points wins!</h3>
+      <h3 class="player-score">Player</h3>
+      <span class="computerScore" id="playerScore">0</span>
+      <h3 class="'player-score">Computer</h3>
+      <span class="computerScore" id="computerScore">0</span>
+
+      <div class="result" id="result">
+        <p>Choose your weapon!</p>
+      </div>
+    </main>
+
+    <div class="buttons">
+      <button class="signs" id="rock">✊</button>
+      <button class="signs" id="paper">✋</button>
+      <button class="signs" id="scissors">✌️</button>
+    </div>
+
+    <div class="again-button">
+      <button class="again" id="again">Again!</button>
+    </div>
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        c0ras
+      </p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <header>
+    <title>Rock-Paper-Scissors</title>
+  </header>
+
+  <body>
+    <div id="intro">Press your choice to begin, first to 5 wins.</div>
+
+    <button class="button" id="rock">Rock</button>
+    <button class="button" id="paper">Paper</button>
+    <button class="button" id="scissors">Scissors</button>
+
+    <h3>Round results</h3>
+    <div id="results"></div>
+
+    <h3>Score</h3>
+    <div id="score">
+      Player
+      <div id="player-score"></div>
+      Computer
+      <div id="computer-score"></div>
+    </div>
+
+    <div id="winner"></div>
+  </body>
+  <script src="script.js"></script>
+</html> -->
