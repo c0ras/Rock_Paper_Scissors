@@ -47,6 +47,9 @@ main {
   border-radius: 5px;
   font-size: 80px;
   background-color: #eee;
+  /* padding: 0;
+  border: none;
+  background: none; */
 }
 
 .result {
@@ -54,7 +57,12 @@ main {
   font-weight: bold;
 }
 
-.computerScore {
+.computer-score {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.player-score {
   font-size: 1.17em;
   font-weight: bold;
 }
@@ -86,4 +94,12 @@ main {
   width: 100%;
   padding: 10px;
   font-size: 10px;
+}
+
+.red {
+  background-color: #800000;
+}
+
+.green {
+  background-color: #28b487;
 }

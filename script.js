@@ -10,9 +10,8 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const again = document.getElementById("again");
 
-const rps = ["rock", "paper", "scissors"];
-
 function getComputerChoice() {
+  const rps = ["rock", "paper", "scissors"];
   const random = rps[(Math.random() * rps.length) | 0];
   return random;
 }
@@ -29,6 +28,17 @@ function win(player, computer) {
   document.getElementById("result").textContent = `${convertResult(
     player
   )} beats ${convertResult(computer)}! You win!`;
+  document.getElementById(player).classList.add("green");
+  setTimeout(function () {
+    document.getElementById(player).classList.remove("green");
+  }, 400);
+
+  if (playerScore >= 5) {
+    // document.getElementById("result")
+    result.style.fontSize = "x-large";
+    document.getElementById("result").textContent = `Player Wins The Match! 🥳`;
+    document.querySelector("body").style.backgroundColor = "#28b487";
+  }
 
   //   console.log("win");
 }
@@ -38,20 +48,33 @@ function lose(player, computer) {
   document.getElementById("computerScore").textContent = computerScore;
   document.getElementById("result").textContent = `${convertResult(
     computer
-  )} beats ${convertResult(player)}! You lose!`;
+  )} beats ${convertResult(player)}! You lose...`;
+  document.getElementById(player).classList.add("red");
+  setTimeout(function () {
+    document.getElementById(player).classList.remove("red");
+  }, 400);
+
+  if (computerScore >= 5) {
+    // document.getElementById("result")
+    result.style.fontSize = "x-large";
+    document.getElementById(
+      "result"
+    ).textContent = `Computer Wins The Match! ☠️`;
+    document.querySelector("body").style.backgroundColor = "#800000";
+  }
   //   console.log("lose");
 }
 
-function tie(player, computer) {
+function tie() {
   document.getElementById("result").textContent = `It's a tie!`;
-  console.log("tie");
+  //   console.log("tie");
 }
 
 function playRound(playerChoice) {
   const computerChoice = getComputerChoice();
 
   if (playerChoice === computerChoice) {
-    tie(playerChoice, computerChoice);
+    tie();
   } else if (
     (playerChoice === "rock" && computerChoice === "scissors") ||
     (playerChoice === "scissors" && computerChoice === "paper") ||
@@ -85,4 +108,7 @@ function main() {
 }
 main();
 
-again.addEventListener("click", function () {});
+document.getElementById("again").addEventListener("click", function () {
+  window.location.reload();
+  //   return false;
+});
