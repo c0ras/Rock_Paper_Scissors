@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: sans-serif;
   color: #eee;
   background-color: #222;
 }
@@ -102,4 +102,8 @@ main {
 
 .green {
   background-color: #28b487;
+}
+
+.grey {
+  background-color: rgb(68, 68, 68);
 }

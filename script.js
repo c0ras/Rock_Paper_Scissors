@@ -2,13 +2,6 @@
 
 let playerScore = 0;
 let computerScore = 0;
-const scorePlayer = document.getElementById("playerScore");
-const scoreComputer = document.getElementById("computerScore");
-const result = document.getElementById("result");
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
-const again = document.getElementById("again");
 
 function getComputerChoice() {
   const rps = ["rock", "paper", "scissors"];
@@ -65,16 +58,19 @@ function lose(player, computer) {
   //   console.log("lose");
 }
 
-function tie() {
+function tie(player, computer) {
   document.getElementById("result").textContent = `It's a tie!`;
-  //   console.log("tie");
+  document.getElementById(player, computer).classList.add("grey");
+  setTimeout(function () {
+    document.getElementById(player, computer).classList.remove("grey");
+  }, 400);
 }
 
 function playRound(playerChoice) {
   const computerChoice = getComputerChoice();
 
   if (playerChoice === computerChoice) {
-    tie();
+    tie(playerChoice, computerChoice);
   } else if (
     (playerChoice === "rock" && computerChoice === "scissors") ||
     (playerChoice === "scissors" && computerChoice === "paper") ||
@@ -90,7 +86,7 @@ function playRound(playerChoice) {
     lose(playerChoice, computerChoice);
     // console.log("winner: computer");
   }
-  //   console.log("computerchoice:" + computerChoice);
+  //   console.log("computerChoice:" + computerChoice);
 }
 
 function main() {
@@ -106,9 +102,9 @@ function main() {
     playRound("scissors");
   });
 }
-main();
 
 document.getElementById("again").addEventListener("click", function () {
   window.location.reload();
   //   return false;
 });
+main();
